@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Cutive Mono', monospace;
   line-height: 1.5;
   font-weight: 400;
 
@@ -14,8 +16,33 @@
   -webkit-text-size-adjust: 100%;
 }
 
+body {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
 
 #center_text {
-  font-size: 5em;
+  font-size: 5rem;
+  width: 35rem;
+}
 
+.line {
+  display: flex;
+  justify-content: space-between;
+  width: 35rem;
+  margin: 0;
+}
+
+.letter:hover {
+  opacity: 22%;
+  transition-duration: 0ms;
+  cursor: pointer;
+}
+
+.letter {
+  opacity: 100%;
+  transition-duration: 1s;
 }
