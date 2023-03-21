@@ -46,3 +46,8 @@ body {
   opacity: 100%;
   transition-duration: 1s;
 }
+
+.looseLetter {
+  position: absolute;
+  font-size: 5rem;
+}
