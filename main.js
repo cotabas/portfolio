@@ -20,44 +20,37 @@ Array.from(words).forEach(word => {
 });
 
 const letters = window.document.getElementsByClassName("letter");
-
 Array.from(letters).forEach(letter => {
-  letter.addEventListener("mouseover", (event) => {
+  letter.addEventListener("mouseover", (event) => { letterMove(letter) });
+
+});
+
+function letterMove(letter) {
     const span = document.createElement("span");
     span.className = "looseLetter";
     span.innerText = letter.innerText;
 
     var rect = letter.getBoundingClientRect();
-    span.style = `top: ${rect.top}px; left: ${rect.left}px;`;
+    span.style = `top: ${rect.top + 50}px; left: ${rect.left}px;`;
 
     centerText.appendChild(span);
 
-    span.animate(
+    var letterKeyFrame = new KeyframeEffect(
+      span,
       [
-        { transform: "translate(-200%, -200%)" },
+        { transform: "translate(-50%, -50%)" },
       ],
       {
-        duration: 1000,
-        iterations: 1,
+        duration: 500,
       }
     );
 
-    var spanRect = span.getBoundingClientRect();
-    span.style = `top: ${spanRect.top}px; left: ${spanRect.left}px;`;
+    var letterAnimation = new Animation(letterKeyFrame, document.timeline);
 
-    span.animate(
-      [
-        { transform: "translate(-200%, 200%)" },
-      ],
-      {
-        duration: 1000,
-        iterations: 1,
-      }
-    );
+    letterAnimation.play();
+
 
     setTimeout(() => {
       span.remove();
     }, "1800");
-  });
-
-});
+}
