@@ -22,6 +22,7 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
+  overflow: hidden;
 }
 
 #center_text {
@@ -50,4 +51,48 @@ body {
 .looseLetter {
   position: absolute;
   font-size: 5rem;
+}
+
+@keyframes upLeft {
+  to { transform: translate(30%, -30%); }
+}
+
+@keyframes downLeft {
+  from{ transform: translate(30%, -30%); }
+  to { transform: translate(400%, 75vh); }
+}
+
+
+.moveUpLeft {
+  animation-name: upLeft;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+}
+
+.moveDownLeft {
+  animation-name: downLeft;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes upRight {
+  to { transform: translate(-30%, -30%); }
+}
+
+@keyframes downRight {
+  from{ transform: translate(-30%, -30%); }
+  to { transform: translate(-400%, 75vh); }
+}
+
+
+.moveUpRight {
+  animation-name: upRight;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+}
+
+.moveDownRight{
+  animation-name: downRight;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
 }
