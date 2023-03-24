@@ -17,13 +17,50 @@
 }
 
 body {
+  margin: 0;
+}
+main {
+  position: relative;
+  z-index: 2;
   display: grid;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  width: 100vw;
   margin: 0;
   overflow: hidden;
 }
+
+button {
+  height: 1rem;
+  width: 4rem;
+  z-index: 3;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.87);
+
+  transition: transform, background-color;
+  transition-timing-function: ease;
+  transition-duration: 400ms;
+}
+
+button:hover {
+  transform: scale(1.15);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+#navButts {
+  position: fixed;
+  display: flex;
+  width: 100vw;
+  justify-content: space-evenly;
+  bottom: 10%;
+}
+
+/* splash letter magic */
 
 #center_text {
   font-size: 5rem;
@@ -62,7 +99,6 @@ body {
   to { transform: translate(400%, 75vh); }
 }
 
-
 .moveUpLeft {
   animation-name: upLeft;
   animation-duration: 500ms;
@@ -83,7 +119,6 @@ body {
   from{ transform: translate(-30%, -30%); }
   to { transform: translate(-400%, 75vh); }
 }
-
 
 .moveUpRight {
   animation-name: upRight;
