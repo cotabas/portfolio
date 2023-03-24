@@ -60,6 +60,26 @@ button:active {
   bottom: 10%;
 }
 
+#navButts i {
+  font-family: 'Cutive Mono', monospace;
+  position: absolute;
+  font-size: 2em;
+  transform: translate(-50%);
+  opacity: 0;
+  transition: 500ms;
+  transition-timing-function: ease;
+}
+
+body:not([data-curtain="true"]) #navButts:hover .open {
+  opacity: 1;
+  transform: translate(-50%, -120%);
+}
+
+body[data-curtain="true"] #navButts .close {
+  opacity: 1;
+  transform: translate(-50%, -120%);
+}
+
 /* splash letter magic */
 
 #center_text {
