@@ -5,6 +5,8 @@ const centerText = window.document.getElementById("center_text");
 const curtainToggles = window.document.getElementsByClassName("curtainToggle");
 var rlToggle = 0;
 
+// give each letter it's own span tag
+//
 const leterize = element => {
   const text = element.innerText.split("");
   element.innerText = "";
@@ -14,6 +16,9 @@ const leterize = element => {
     span.className = "letter"
     span.innerText = letter;
 
+    if (span.innerText == ".") {
+      span.classList.add("orange");
+    }
     element.appendChild(span);
   });
 }
@@ -21,6 +26,8 @@ Array.from(words).forEach(word => {
   leterize(word);
 });
 
+// logic for the letter pop off effect
+//
 const letters = window.document.getElementsByClassName("letter");
 Array.from(letters).forEach(letter => {
   letter.addEventListener("mouseover", (event) => { 
@@ -29,6 +36,9 @@ Array.from(letters).forEach(letter => {
       span.className = "looseLetter";
       span.innerText = letter.innerText;
 
+      if (span.innerText == ".") {
+        span.classList.add("orange");
+      }
       var rect = letter.getBoundingClientRect();
       span.style = `top: ${rect.top}px; left: ${rect.left}px;`;
 
@@ -52,8 +62,29 @@ Array.from(letters).forEach(letter => {
   });
 });
 
+// logic for showing the navs
+//
+const workNav = window.document.getElementById("navWorkLinks");
+const aboutNav = window.document.getElementById("navAboutLinks");
+const blogNav = window.document.getElementById("navBlogLinks");
+
 Array.from(curtainToggles).forEach(toggle => {
   toggle.addEventListener("click", (event) => {
     document.body.dataset.curtain = document.body.dataset.curtain == "true" ? "false" : "true";
+    if (toggle.id == "workButt") {
+      workNav.classList.add("visible");
+      aboutNav.classList.remove("visible");
+      blogNav.classList.remove("visible");
+    }
+    if (toggle.id == "aboutButt") {
+      aboutNav.classList.add("visible");
+      workNav.classList.remove("visible");
+      blogNav.classList.remove("visible");
+    }
+    if (toggle.id == "blogButt") {
+      blogNav.classList.add("visible");
+      workNav.classList.remove("visible");
+      aboutNav.classList.remove("visible");
+    }
   });
 });
