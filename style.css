@@ -14,6 +14,9 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+a {
+  text-decoration: none;
+}
 
 body {
   margin: 0;
@@ -35,37 +38,50 @@ main {
 }
 .visible {
   opacity: 100% !important;
+  z-index: 1 !important;
 }
 
-#navWork {
+#navWork, #navAbout {
   height: 40vh;
   width: 100%;
   position: absolute;
   left: 0;
   bottom: 0;
-  z-index: 1;
+  z-index: 0;
+  opacity: 0;
 }
 
-#navWorkLinks {
+.navLinkContainer {
   display: flex;
   gap: clamp(1rem, 2vw, 2rem);
   padding: 0rem clamp(1rem, 2vw, 2rem);
   transform: translateY(70%) scale(0.9);
   transition: transform 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  opacity: 0;
 }
 
-body[data-curtain="true"] #navWorkLinks {
+#navAboutLinks {
+  justify-content: space-around;
+}
+
+#aboutMe {
+  width: clamp(45ch, 50%, 75ch);
+}
+
+#socials {
+  display: flex;
+  align-items: end;
+  gap: 1rem;
+}
+
+body[data-curtain="true"] .navLinkContainer {
   transform: translateY(0%) scale(1);
 }
 
-.nav-link > h2 {
+h2 {
   text-decoration: none;
-  font-family: 'Cutive', serif;
   color: rgba(255, 255, 255, 0.87);
   font-size: 1.25em;
   margin: 0;
-  opacity: 0;
 }
 
 .nav-link > img {
@@ -80,6 +96,16 @@ body[data-curtain="true"] #navWorkLinks {
   cursor: pointer;
   opacity: 70%;
 }
+
+.social {
+  width: 2rem;
+  height: 2rem;
+}
+
+.social:hover {
+  opacity: 70%;
+}
+
 
 button {
   height: 1rem;

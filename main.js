@@ -64,9 +64,9 @@ Array.from(letters).forEach(letter => {
 
 // logic for showing the navs
 //
-const workNav = window.document.getElementById("navWorkLinks");
-const aboutNav = window.document.getElementById("navAboutLinks");
-const blogNav = window.document.getElementById("navBlogLinks");
+const workNav = window.document.getElementById("navWork");
+const aboutNav = window.document.getElementById("navAbout");
+const blogNav = window.document.getElementById("navBlog");
 
 Array.from(curtainToggles).forEach(toggle => {
   toggle.addEventListener("click", (event) => {
