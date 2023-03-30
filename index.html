@@ -25,7 +25,7 @@
           <i class="open about">about</i>
         </button>
         <button id="blogButt" class="curtainToggle hiddenClose" type="button">
-          <i class="open blog">writing</i>
+          <i class="open blog">services</i>
         </button>
       </div>
     </main>
@@ -47,10 +47,10 @@
     </nav>
     <nav id="navAbout">
       <div class="navLinkContainer" id="navAboutLinks">
-        <div id="aboutMe">
+        <div class="para" id="aboutMe">
           <h2> Morgan Hufford </h2>
 
-          Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.
+          <p>Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.</p>
         </div>
 
         <div id="socials">
@@ -70,7 +70,22 @@
       </div>
     </nav>
     <nav id="navBlog">
-      <div id="navBlogLinks">
+      <div class="navLinkContainer" id="navBlogLinks">
+        <div class="para" id="serviceParagraph">
+          <h2> Services </h2>
+          <p>Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.</p>
+        </div>
+        <div id="contactBox">
+          <form method="post" name="contact_form" action="email_form.php">
+            name
+            <input type="text" name="name">
+            email *
+            <input type="email" name="email" required>
+            <br />
+            <textarea name="message"></textarea>
+            <input id="sub_button" type="submit" value="submit">
+          </form>
+        </div>
       </div>
     </nav>
     <div id="app"></div>

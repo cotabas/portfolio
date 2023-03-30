@@ -41,7 +41,7 @@ main {
   z-index: 1 !important;
 }
 
-#navWork, #navAbout {
+#navWork, #navAbout, #navBlog {
   height: 40vh;
   width: 100%;
   position: absolute;
@@ -63,8 +63,12 @@ main {
   justify-content: space-around;
 }
 
-#aboutMe {
+.para {
   width: clamp(45ch, 50%, 75ch);
+}
+
+.para p {
+  font-size: 1rem;
 }
 
 #socials {
@@ -80,7 +84,7 @@ body[data-curtain="true"] .navLinkContainer {
 h2 {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.87);
-  font-size: 1.25em;
+  font-size: 2em;
   margin: 0;
 }
 
