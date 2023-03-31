@@ -197,6 +197,10 @@ body[data-curtain="true"] main {
   transform: translateY(-50%);
 }
 
+body[data-content="true"] main {
+  transform: translateY(-90%);
+}
+
 /* splash letter magic */
 
 .orange {

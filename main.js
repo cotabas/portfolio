@@ -70,6 +70,7 @@ const blogNav = window.document.getElementById("navBlog");
 
 Array.from(curtainToggles).forEach(toggle => {
   toggle.addEventListener("click", (event) => {
+    document.body.dataset.content = "false";
     document.body.dataset.curtain = document.body.dataset.curtain == "true" ? "false" : "true";
     if (toggle.id == "workButt") {
       workNav.classList.add("visible");
@@ -87,4 +88,12 @@ Array.from(curtainToggles).forEach(toggle => {
       aboutNav.classList.remove("visible");
     }
   });
+});
+
+// show work
+//
+const workOne = window.document.getElementById("workOne");
+
+workOne.addEventListener("click", (event) => {
+  document.body.dataset.content = "true";
 });
