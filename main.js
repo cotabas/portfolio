@@ -70,6 +70,7 @@ const blogNav = window.document.getElementById("navBlog");
 
 Array.from(curtainToggles).forEach(toggle => {
   toggle.addEventListener("click", (event) => {
+    resetWork();
     document.body.dataset.content = "false";
     document.body.dataset.curtain = document.body.dataset.curtain == "true" ? "false" : "true";
     if (toggle.id == "workButt") {
@@ -93,7 +94,26 @@ Array.from(curtainToggles).forEach(toggle => {
 // show work
 //
 const workOne = window.document.getElementById("workOne");
+const workTwo = window.document.getElementById("workTwo");
 
-workOne.addEventListener("click", (event) => {
-  document.body.dataset.content = "true";
+const workLinks = window.document.getElementsByClassName("nav-link");
+
+Array.from(workLinks).forEach(work => {
+  work.addEventListener("click", (event) => {
+    document.body.dataset.content = "true";
+    Array.from(workLinks).forEach(link => {
+      if (link.id == work.id) {
+        work.classList.remove("hide");
+      } else {
+        link.classList.add("hide");
+      }
+    });
+  });
 });
+
+const resetWork = () => {
+    Array.from(workLinks).forEach(work => {
+        work.classList.remove("hide");
+    });
+}
+
