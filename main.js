@@ -93,10 +93,8 @@ Array.from(curtainToggles).forEach(toggle => {
 
 // show work
 //
-const workOne = window.document.getElementById("workOne");
-const workTwo = window.document.getElementById("workTwo");
-
 const workLinks = window.document.getElementsByClassName("nav-link");
+const workParas = window.document.getElementsByClassName("workPara");
 
 Array.from(workLinks).forEach(work => {
   work.addEventListener("click", (event) => {
@@ -108,12 +106,20 @@ Array.from(workLinks).forEach(work => {
         link.classList.add("hide");
       }
     });
+    Array.from(workParas).forEach(para => {
+      if (para.id == `${work.id}Para`) {
+        para.classList.add("visibleBehind");
+      }
+    });
   });
 });
 
 const resetWork = () => {
     Array.from(workLinks).forEach(work => {
         work.classList.remove("hide");
+    });
+    Array.from(workParas).forEach(para => {
+        para.classList.remove("visibleBehind");
     });
 }
 
