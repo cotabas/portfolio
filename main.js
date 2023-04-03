@@ -117,6 +117,7 @@ Array.from(workLinks).forEach(work => {
 const resetWork = () => {
     Array.from(workLinks).forEach(work => {
         work.classList.remove("hide");
+        work.classList.add("reset");
     });
     Array.from(workParas).forEach(para => {
         para.classList.remove("visibleBehind");

@@ -217,7 +217,7 @@ body[data-content="true"] #workOneImg {
   transition: transform 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-body[data-content="true"] #workOnePara {
+body[data-content="true"] #workOneContainer {
   transform: translate(38vw, -57vh);
   transition: transform 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
@@ -305,6 +305,10 @@ body[data-content="true"] #workOnePara {
 
 .visibleBehind {
   opacity: 100% !important;
+}
+
+.reset {
+  transform: none;
 }
 
 .hide {
