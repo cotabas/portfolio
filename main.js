@@ -1,5 +1,6 @@
 import './style.css'
 
+const root = document.documentElement;
 const words = window.document.getElementsByClassName('line');
 const centerText = window.document.getElementById("center_text");
 const curtainToggles = window.document.getElementsByClassName("curtainToggle");
@@ -98,12 +99,15 @@ const workParas = window.document.getElementsByClassName("workPara");
 const workImages = window.document.getElementsByClassName("workImage");
 
 Array.from(workLinks).forEach(work => {
+  var rect = work.getBoundingClientRect();
+  
   work.addEventListener("click", (event) => {
     document.body.dataset.content = "true";
     Array.from(workLinks).forEach(link => {
       if (link.id == work.id) {
         work.classList.remove("hide");
         work.classList.remove("reset");
+        root.style.setProperty("--posOffset", rect.left + "px"); 
         work.classList.add("showWork");
       } else {
         link.classList.add("hide");
