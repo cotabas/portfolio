@@ -95,6 +95,7 @@ Array.from(curtainToggles).forEach(toggle => {
 //
 const workLinks = window.document.getElementsByClassName("nav-link");
 const workParas = window.document.getElementsByClassName("workPara");
+const workImages = window.document.getElementsByClassName("workImage");
 
 Array.from(workLinks).forEach(work => {
   work.addEventListener("click", (event) => {
@@ -102,9 +103,20 @@ Array.from(workLinks).forEach(work => {
     Array.from(workLinks).forEach(link => {
       if (link.id == work.id) {
         work.classList.remove("hide");
+        work.classList.remove("reset");
+        work.classList.add("showWork");
       } else {
         link.classList.add("hide");
+        link.classList.remove("showWork");
       }
+    });
+    Array.from(workImages).forEach(image => {
+      if (image.id == `${work.id}Img`) {
+        image.classList.add("imageScale");
+      } else {
+        image.classList.remove("imageScale");
+      }
+
     });
     Array.from(workParas).forEach(para => {
       if (para.id == `${work.id}Para`) {
@@ -118,9 +130,13 @@ const resetWork = () => {
     Array.from(workLinks).forEach(work => {
         work.classList.remove("hide");
         work.classList.add("reset");
+        work.classList.remove("showWork");
     });
     Array.from(workParas).forEach(para => {
         para.classList.remove("visibleBehind");
+    });
+    Array.from(workImages).forEach(image => {
+      image.classList.remove("imageScale");
     });
 }
 
