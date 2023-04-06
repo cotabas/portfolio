@@ -93,20 +93,21 @@ Array.from(curtainToggles).forEach(toggle => {
 });
 
 // show work
-//
+// 
 const workLinks = window.document.getElementsByClassName("nav-link");
 const workParas = window.document.getElementsByClassName("workPara");
 const workImages = window.document.getElementsByClassName("workImage");
 
 Array.from(workLinks).forEach(work => {
-  var rect = work.getBoundingClientRect();
-  
+
   work.addEventListener("click", (event) => {
     document.body.dataset.content = "true";
     Array.from(workLinks).forEach(link => {
       if (link.id == work.id) {
         work.classList.remove("hide");
         work.classList.remove("reset");
+        // needs to be after removing hide
+        var rect = work.getBoundingClientRect();
         root.style.setProperty("--posOffset", rect.left + "px"); 
         work.classList.add("showWork");
       } else {
@@ -124,7 +125,9 @@ Array.from(workLinks).forEach(work => {
     });
     Array.from(workParas).forEach(para => {
       if (para.id == `${work.id}Para`) {
-        para.classList.add("visibleBehind");
+        para.classList.add("showPara");
+      } else {
+        para.classList.remove("showPara");
       }
     });
   });
