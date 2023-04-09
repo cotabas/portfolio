@@ -180,6 +180,14 @@ button:active {
   display: none;
 }
 
+ #closeButt:hover {
+   transform: translate(-50%) scale(1.15);
+ }
+
+#closeButt:active {
+  transform: translate(-50%) scale(.95);
+ }
+
 .workPara {
   display: flex;
   flex-direction: column;
@@ -213,6 +221,8 @@ body[data-curtain="true"] #navButts .close {
 }
 
 body[data-curtain="true"] .hiddenClose {
+  pointer-events: none;
+  cursor: default;
   opacity: 0;
   transition: 500ms;
   transition-timing-function: ease;
