@@ -168,7 +168,7 @@ button:active {
   font-size: 2em;
   transform: translate(-50%);
   opacity: 0;
-  transition: 500ms;
+  transition: 1000ms;
   transition-timing-function: ease;
 }
 
@@ -180,7 +180,7 @@ button:active {
   display: none;
 }
 
- #closeButt:hover {
+#closeButt:hover {
    transform: translate(-50%) scale(1.15);
  }
 
@@ -206,9 +206,9 @@ button:active {
   gap: 1rem;
 }
 
-body[data-curtain="false"] #navButts:hover .open {
-  opacity: 1;
-  transform: translate(-50%, -120%);
+body[data-curtain="false"] .open {
+  opacity: 1 !important;
+  transform: translate(-50%, -120%) !important;
 }
 
 body[data-curtain="true"] #closeButt {

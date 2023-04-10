@@ -147,3 +147,16 @@ const resetWork = () => {
     });
 }
 
+const buttLabels = window.document.getElementsByClassName("buttLabel");
+
+document.onmousemove = (event) => {
+  if (event.clientY > window.screen.availHeight - (window.screen.availHeight / 3) ) {
+    Array.from(buttLabels).forEach(label => {
+      label.classList.add("open");
+    });
+  } else {
+    Array.from(buttLabels).forEach(label => {
+      label.classList.remove("open");
+    });
+  }
+}
