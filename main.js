@@ -140,7 +140,7 @@ const resetWork = () => {
         work.classList.remove("showWork");
     });
     Array.from(workParas).forEach(para => {
-        para.classList.remove("visibleBehind");
+        para.classList.remove("showPara");
     });
     Array.from(workImages).forEach(image => {
       image.classList.remove("imageScale");
