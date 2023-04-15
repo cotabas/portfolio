@@ -358,28 +358,38 @@ body[data-content="true"] .workPara {
     max-width: 100vw;
     overflow: hidden;
     position: relative;
+    display: block;
   }
 
   #navButts {
     display: none;
   }
 
-  #socials {
+  #navAbout {
+    opacity: 100;
     z-index: 5;
-    opacity: 1;
-    position: absolute;
-    bottom: 30px;
-    left: 10px;
   }
 
+  #socials {
+    z-index: 5;
+    position: absolute;
+    right: 1rem;
+    top: -5rem;
+  }
+
+  #aboutMe {
+    opacity: 0;
+  }
 
   #center_text {
     display: flex;
     flex-direction: column;
+    margin-top: 2rem;
+    padding: 1rem;
   }
 
   #center_text, .line {
-    width: 100vw;   
+    width: 90vw;   
     overflow: hidden;
   }
 
