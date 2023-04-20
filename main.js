@@ -147,6 +147,9 @@ const resetWork = () => {
     });
 }
 
+
+// make the button labels show up when the mouse is near the bottom of the screen
+//
 const buttLabels = window.document.getElementsByClassName("buttLabel");
 
 document.onmousemove = (event) => {
