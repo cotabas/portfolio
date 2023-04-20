@@ -1,7 +1,7 @@
 import './style.css'
 
-import sgMail from '@sendgrid/mail'
-sgMail.setApiKey("");
+//import sgMail from '@sendgrid/mail'
+//sgMail.setApiKey("");
 
 const root = document.documentElement;
 const words = window.document.getElementsByClassName('line');
@@ -167,31 +167,31 @@ document.onmousemove = (event) => {
 
 // sendgrid
 //
-
-const contactForm = window.document.getElementById("contact_form");
-
-const subMessage = window.document.getElementsByClassName("subMessage");
-
-contactForm.addEventListener("submit", (event) => {
-
-  const message = Array.from(subMessage)[0].formAction
-
-  const msg = {
-    to: 'cotabas@gmail.com', // Change to your recipient
-    from: 'mo@cptmo.dev', // Change to your verified sender
-    subject: 'Sending with SendGrid is Fun',
-    text: message,
-    html: '<strong>and easy to do anywhere, even with Node.js</strong>',
-  }
-
-  sgMail
-    .send(msg)
-    .then((response) => {
-      console.log(response[0].statusCode)
-      console.log(response[0].headers)
-    })
-    .catch((error) => {
-      console.error(error)
-    })
-  event.preventDefault();
-});
+//
+//const contactForm = window.document.getElementById("contact_form");
+//
+//const subMessage = window.document.getElementsByClassName("subMessage");
+//
+//contactForm.addEventListener("submit", (event) => {
+//
+//  const message = Array.from(subMessage)[0].formAction
+//
+//  const msg = {
+//    to: 'cotabas@gmail.com', // Change to your recipient
+//    from: 'mo@cptmo.dev', // Change to your verified sender
+//    subject: 'Sending with SendGrid is Fun',
+//    text: message,
+//    html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+//  }
+//
+//  sgMail
+//    .send(msg)
+//    .then((response) => {
+//      console.log(response[0].statusCode)
+//      console.log(response[0].headers)
+//    })
+//    .catch((error) => {
+//      console.error(error)
+//    })
+//  event.preventDefault();
+//});
